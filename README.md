@@ -4,6 +4,16 @@ A modern discussion platform frontend built with React, TypeScript, Vite, React 
 
 Users can browse protocols, read reviews, participate in discussion threads, comment on conversations, and vote on content.
 
+
+## Developed with:
+
+* React
+* TypeScript
+* Vite
+* TanStack Query
+* Tailwind CSS
+* React Router
+
 ---
 
 ## Features
@@ -133,7 +143,7 @@ src/
 ### Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/alinsub16/protocol-platform-frontend.git
 ```
 
 ### Navigate to the Project
@@ -344,11 +354,4 @@ Benefits:
 
 ## Author
 
-Developed with:
-
-* React
-* TypeScript
-* Vite
-* TanStack Query
-* Tailwind CSS
-* React Router
+Christopher Alinsub
