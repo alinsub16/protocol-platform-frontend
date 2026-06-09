@@ -1,5 +1,4 @@
-import { useMutation, useQueryClient, } from "@tanstack/react-query";
-
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ReviewApi } from "@/features/reviews/api/reviewApi";
 
 export const useCreateReview = () => {
@@ -7,13 +6,9 @@ export const useCreateReview = () => {
 
   return useMutation({
     mutationFn: ReviewApi.create,
-
-    onSuccess: (_, variables) => {
+    onSuccess: () => {
       queryClient.invalidateQueries({
-        queryKey: [
-          "reviews",
-          variables.protocol_id,
-        ],
+        queryKey: ["reviews"],
       });
     },
   });

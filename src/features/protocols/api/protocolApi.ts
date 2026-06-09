@@ -7,12 +7,9 @@ export interface ProtocolFilters {
 
 export const ProtocolApi = {
   
-  getAll: async (params?: ProtocolFilters) => {
-    const response = await api.get("/protocols", {
-      params,
-    });
-
-    return response.data;
+  getAll: async (page = 1) => {
+    const { data } = await api.get(`/protocols?page=${page}`);
+    return data;
   },
 
   search: async (query: string) => {

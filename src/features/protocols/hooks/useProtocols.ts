@@ -1,17 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { ProtocolApi } from "@/features/protocols/api/protocolApi";
 
-export const useProtocols = (
-  search?: string,
-  sort?: string
-) => {
+export const useProtocols = (page: number) => {
   return useQuery({
-    queryKey: ["protocols", search, sort],
-
-    queryFn: () =>
-      ProtocolApi.getAll({
-        search,
-        sort,
-      }),
+    queryKey: ["protocols", page],
+    queryFn: () => ProtocolApi.getAll(page),
   });
 };

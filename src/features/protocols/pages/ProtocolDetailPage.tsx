@@ -6,6 +6,8 @@ import { useState } from "react";
 import { ThreadList } from "@/features/threads/components/ThreadList";
 import { ReviewForm } from "@/features/reviews/components/ReviewForm";
 import { ReviewList } from "@/features/reviews/components/ReviewList";
+import { ThreadSearch } from "@/features/threads/components/ThreadSearch";
+import BackButton from "@/components/shared/BackButton";
 
 export const ProtocolDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -40,10 +42,13 @@ export const ProtocolDetailPage = () => {
 
   return (
     <div className="max-w-5xl mx-auto p-6 space-y-10">
+      <div className="absolute right-2 top-2">
+        <BackButton />
+      </div>
       {/* =========================
           PROTOCOL HEADER
       ========================= */}
-      <div className="bg-white border rounded-xl p-6 shadow-sm">
+      <div className="bg-white border rounded-xl p-6 shadow-sm mt-10">
         <h1 className="text-3xl text-blue-950 font-bold mb-3">
           {protocol.title}
         </h1>
@@ -91,6 +96,7 @@ export const ProtocolDetailPage = () => {
         <h2 className="text-2xl font-bold text-blue-950  mb-4">
           Discussions
         </h2>
+          <ThreadSearch protocolId={protocolId} />
         <ThreadList protocolId={protocolId} />
       </div>
     </div>

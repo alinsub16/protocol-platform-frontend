@@ -82,7 +82,6 @@ Users can browse protocols, read reviews, participate in discussion threads, com
 
 ### Development Tools
 
-* ESLint
 * TypeScript
 
 ---
@@ -94,6 +93,8 @@ src/
 ├── api/
 │
 ├── components/
+│    ├── Layout/
+│    └── shared/
 │
 ├── features/
 │   ├── protocols/
@@ -149,7 +150,7 @@ git clone https://github.com/alinsub16/protocol-platform-frontend.git
 ### Navigate to the Project
 
 ```bash
-cd frontend
+cd Procol-Platform-Frontend
 ```
 
 ### Install Dependencies

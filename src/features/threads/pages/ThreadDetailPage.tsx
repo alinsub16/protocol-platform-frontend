@@ -7,6 +7,8 @@ import { useComments } from "@/features/comments/hooks/useComments";
 import { useCreateComment } from "@/features/comments/hooks/useCreateComment";
 import { CommentItem } from "@/features/comments/components/CommentItem";
 import { ThreadResponse } from "@/features/threads/types/threadsTypes";
+import { VoteButtons } from "@/features/votes/components/VoteButtons";
+import BackButton from "@/components/shared/BackButton";
 
 export const ThreadDetailPage = () => {
   const { id } = useParams();
@@ -68,12 +70,27 @@ export const ThreadDetailPage = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
+      <div className="absolute right-2 top-2">
+        <BackButton />
+      </div>
       
       {/* THREAD */}
-      <div className="mb-8 bg-white p-4">
+      <div className="mb-8 bg-white p-4 mt-10 xl:mt-0">
         <h1 className="text-2xl text-blue-950 font-bold">{thread.title}</h1>
 
         <p className="text-gray-700 mt-3">{thread.body}</p>
+        <div className="flex justify-between mt-10 items-center">
+          <div className="flex gap-4 text-xs text-gray-500">
+            <span>💬 {thread.comments_count}</span>
+          </div>
+          <div>
+            <VoteButtons
+              votableId={thread.id}
+              votableType="thread"
+              votesCount={thread.votes_count}
+            />
+          </div>
+        </div>
       </div>
 
       {/* CREATE COMMENT */}
